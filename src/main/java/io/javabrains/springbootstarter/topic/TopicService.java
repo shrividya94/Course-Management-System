@@ -10,8 +10,12 @@ public class TopicService {
 	private List<Topic> topics = Arrays.asList(new Topic("spring","spring Framework","spring Framework Description"),
 			new Topic("java","core java","java Description"),
 			new Topic("javascript","javascript","javascript Description"));
+	
 	public List<Topic> getAllTopics(){
 		return topics;
 	}
-
+	 
+    public Topic getTopic(String id) {
+    	return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+    }
 }
